@@ -2,21 +2,21 @@ import numpy as np
 import pandas as pd
 
 
-def main():
-    # Простейшая проверка NumPy
-    a = np.array([1, 2, 3])
-    print("NumPy array:", a)
-    print("NumPy version:", np.__version__)
+class MyLineReg:
+    def __init__(self, n_iter: int = 100, learning_rate: float = 0.1):
+        self.n_iter = n_iter
+        self.learning_rate = learning_rate
 
-    # Простейшая проверка Pandas
-    df = pd.DataFrame({
-        "col1": [10, 20, 30],
-        "col2": ["a", "b", "c"]
-    })
-    print("\nPandas DataFrame:")
-    print(df)
-    print("Pandas version:", pd.__version__)
+    def __str__(self):
+        return f"MyLineReg class: n_iter={self.n_iter}, learning_rate={self.learning_rate}"
+
+
+
+def main():
+    a = MyLineReg(10, 0.05)
+    print(a)
 
 
 if __name__ == "__main__":
     main()
+
